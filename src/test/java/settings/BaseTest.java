@@ -1,4 +1,4 @@
-package common;
+package settings;
 
 import org.openqa.selenium.WebDriver;
 

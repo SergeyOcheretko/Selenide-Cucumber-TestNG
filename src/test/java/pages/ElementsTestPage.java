@@ -2,13 +2,13 @@ package pages;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
-import common.BaseTest;
+import settings.BaseTest;
 import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Condition.*;
-import static common.Locators.*;
-public class ElementsPage extends BaseTest {
-    public ElementsPage(WebDriver driver) {
+import static settings.Locators.*;
+public class ElementsTestPage extends BaseTest {
+    public ElementsTestPage(WebDriver driver) {
         super(driver);
     }
 
@@ -34,7 +34,7 @@ public class ElementsPage extends BaseTest {
     }
 
     public void clickOnButton(String text) {
-        Selenide.$x(UNIVERSAL_XPATH_FOR_CLICKABLE_BUTTONS.replace("$1", text)).click();
+        Selenide.$x(UNIVERSAL_XPATH_FOR_CLICKABLE_BUTTONS.replace("$1", text)).scrollTo().click();
     }
 
     public boolean verifyThatResultsIsDisplayed() {

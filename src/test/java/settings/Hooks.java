@@ -1,10 +1,8 @@
-package common;
+package settings;
 
 import com.codeborne.selenide.Configuration;
 import io.cucumber.java.Before;
-import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeTest;
 
 public class Hooks {
 

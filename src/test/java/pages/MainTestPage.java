@@ -1,10 +1,9 @@
 package pages;
 
 import com.codeborne.selenide.Selenide;
-import common.BaseTest;
-import io.cucumber.java.eo.Se;
+import settings.BaseTest;
 import org.openqa.selenium.WebDriver;
-import static common.Locators.*;
+import static settings.Locators.*;
 public class MainTestPage extends BaseTest {
     public MainTestPage(WebDriver driver) {super(driver);
     }
