@@ -40,3 +40,49 @@ Feature: Elements Page
     Scenario: Not clickable No radio button
       Given Click on the "Radio Button" button
       And Verify that No radio button isn't clickable
+
+
+    Scenario: Open the Buttons page
+      Given Click on the "Buttons" button
+      And Verify that "Buttons" page is displayed
+
+
+    Scenario: Double click
+      Given Click on the "Buttons" button
+      And Click on the Double-click button
+      And Verify that double-click is done
+
+
+    Scenario: Right click
+      Given Click on the "Buttons" button
+     And Click on the Right click button
+     And Verify that right click is done
+
+
+    Scenario: Open Broken link- Images page
+      Given Click on the "Broken Links - Images" button
+      And Verify that "Broken Links - Images" page is displayed
+
+
+    Scenario:  Check broken link page is displayed
+      Given Click on the "Broken Links - Images" button
+      And Click on the broken link button
+      And Verify that broken links page is opened
+
+
+
+    Scenario: Open download and upload page
+      Given Click on the "Upload and Download" button
+      And Verify that "Upload and Download" page is displayed
+
+
+    Scenario: Check downloading file
+      Given Click on the "Upload and Download" button
+      Then Click on "Download" button
+      And Verify that file is downloaded
+
+
+    Scenario: Check uploading file
+      Given Click on the "Upload and Download" button
+     And Click on Upload file
+#    And Choose file for uploading

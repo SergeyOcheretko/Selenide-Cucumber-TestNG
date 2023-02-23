@@ -1,9 +1,12 @@
 package pages;
-
+import static com.codeborne.selenide.Selenide.*;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.WindowType;
 import settings.BaseTest;
 import org.openqa.selenium.WebDriver;
+
+import java.io.File;
 
 import static com.codeborne.selenide.Condition.*;
 import static settings.Locators.*;
@@ -22,7 +25,7 @@ public class ElementsTestPage extends BaseTest {
     }
 
     public void clickOnTheButton(String text) {
-        Selenide.$x(UNIVERSAL_ELEMENTS_TAB_XPATH.replace("$1", text)).click();
+        Selenide.$x(UNIVERSAL_ELEMENTS_TAB_XPATH.replace("$1", text)).scrollTo().click();
     }
 
     public boolean verifyThatPageIsDisplayed(String text) {
@@ -33,8 +36,9 @@ public class ElementsTestPage extends BaseTest {
         Selenide.$x("//textarea[@id='currentAddress']").sendKeys(text);
     }
 
-    public void clickOnButton(String text) {
+    public void clickOnButton(String text) throws InterruptedException {
         Selenide.$x(UNIVERSAL_XPATH_FOR_CLICKABLE_BUTTONS.replace("$1", text)).scrollTo().click();
+    Thread.sleep(3000);
     }
 
     public boolean verifyThatResultsIsDisplayed() {
@@ -52,5 +56,51 @@ public class ElementsTestPage extends BaseTest {
     public void verifyThatNoRadioButtonIsnTClickable() {
         SelenideElement el =Selenide.$x ("//label[normalize-space()='No']");
         el.shouldBe(interactable);
+    }
+
+    public void clickOnTheDoubleClickButton() throws InterruptedException {
+
+        Selenide.$x("//button[.='Double Click Me']").doubleClick();
+    Thread.sleep(2000);
+    }
+    public void verifyThatDoubleClickIsDone() {
+        Selenide.$x("//p[.='You have done a double click']").isDisplayed();
+    }
+
+    public void clickOnTheRightClickButton() throws InterruptedException {
+    Selenide.$x("//button[@id='rightClickBtn']").contextClick();
+    Thread.sleep(2000);
+    }
+
+    public boolean verifyThatRightClickIsDone() {
+return Selenide.$x("//p[@id='rightClickMessage']").isDisplayed();
+
+    }
+
+    public void clickOnTheBrokenLinkButton() {
+    Selenide.$x("//a[normalize-space()='Click Here for Broken Link']").click();
+
+    }
+
+    public boolean verifyThatBrokenLinksPageIsOpened() {
+         switchTo().window("The Internet");
+     return true;
+
+    }
+
+    public boolean verifyThatFileIsDownloaded() {
+     File f = new File("C:\\Users\\Sergey\\Downloads");
+    return f.exists();
+    }
+
+    public void clickOnUploadFile() throws InterruptedException {
+   File picture = new File("C:\\Users\\Sergey\\Desktop\\0_7c779_5df17311_orig.jpg");
+    Selenide.$x("//input[@class='form-control-file']").uploadFile(picture);
+
+    }
+
+    public void chooseFileForUploading() throws InterruptedException {
+
+    $("#uploadFile").uploadFromClasspath("src/test/java/TestFiles/TestPicture.jpg");
     }
 }

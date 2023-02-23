@@ -65,7 +65,7 @@ public class StepDefinition {
     }
 
     @Then("Click on {string} button")
-    public void clickOnButton(String text) {
+    public void clickOnButton(String text) throws InterruptedException {
     elementsTestPage.clickOnButton(text);
     }
 
@@ -87,5 +87,50 @@ public class StepDefinition {
     @And("Verify that No radio button isn't clickable")
     public void verifyThatNoRadioButtonIsnTClickable() {
     elementsTestPage.verifyThatNoRadioButtonIsnTClickable();
+    }
+
+    @And("Click on the Double-click button")
+    public void clickOnTheDoubleClickButton() throws InterruptedException {
+    elementsTestPage.clickOnTheDoubleClickButton();
+    }
+
+    @And("Verify that double-click is done")
+    public void verifyThatDoubleClickIsDone() {
+    elementsTestPage.verifyThatDoubleClickIsDone();
+    }
+
+    @And("Click on the Right click button")
+    public void clickOnTheRightClickButton() throws InterruptedException {
+    elementsTestPage.clickOnTheRightClickButton();
+    }
+
+    @And("Verify that right click is done")
+    public void verifyThatRightClickIsDone() {
+Assert.assertTrue(elementsTestPage.verifyThatRightClickIsDone(),"Right click is done");
+    }
+
+    @And("Click on the broken link button")
+    public void clickOnTheBrokenLinkButton() {
+    elementsTestPage.clickOnTheBrokenLinkButton();
+    }
+
+    @And("Verify that broken links page is opened")
+    public void verifyThatBrokenLinksPageIsOpened() {
+    Assert.assertTrue(elementsTestPage.verifyThatBrokenLinksPageIsOpened(),"Broken page is opened");
+    }
+
+    @And("Verify that file is downloaded")
+    public void verifyThatFileIsDownloaded() {
+    Assert.assertTrue(elementsTestPage.verifyThatFileIsDownloaded(),"File is downloaded");
+    }
+
+    @And("Click on Upload file")
+    public void clickOnUploadFile() throws InterruptedException {
+    elementsTestPage.clickOnUploadFile();
+    }
+
+    @And("Choose file for uploading")
+    public void chooseFileForUploading() throws InterruptedException {
+    elementsTestPage.chooseFileForUploading();
     }
 }
