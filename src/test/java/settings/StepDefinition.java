@@ -133,4 +133,11 @@ Assert.assertTrue(elementsTestPage.verifyThatRightClickIsDone(),"Right click is 
     public void chooseFileForUploading() throws InterruptedException {
     elementsTestPage.chooseFileForUploading();
     }
+
+
+
+    @Then("Click on Submit button")
+    public void clickOnSubmitButton() {
+    elementsTestPage.clickOnSubmitButton();
+    }
 }

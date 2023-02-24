@@ -103,4 +103,8 @@ return Selenide.$x("//p[@id='rightClickMessage']").isDisplayed();
 
     $("#uploadFile").uploadFromClasspath("src/test/java/TestFiles/TestPicture.jpg");
     }
+
+    public void clickOnSubmitButton() {
+    Selenide.$x("//button[@id='submit']").scrollTo().click();
+    }
 }

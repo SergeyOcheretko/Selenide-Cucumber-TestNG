@@ -16,7 +16,7 @@ Feature: Elements Page
       And Type "Vasya" in the "Full Name" field
       And Type "qwerty@gmail.com" in the "name@example.com" field
       Then Type "Kharkov" in the Current Address textArea
-      Then Click on "Submit" button
+      Then Click on Submit button
       And Verify that results is displayed
 
 
