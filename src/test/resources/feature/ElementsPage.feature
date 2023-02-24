@@ -78,7 +78,7 @@ Feature: Elements Page
 
     Scenario: Check downloading file
       Given Click on the "Upload and Download" button
-      Then Click on "Download" button
+      Then Click on Download button
       And Verify that file is downloaded
 
 

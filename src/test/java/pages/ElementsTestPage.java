@@ -36,8 +36,8 @@ public class ElementsTestPage extends BaseTest {
         Selenide.$x("//textarea[@id='currentAddress']").sendKeys(text);
     }
 
-    public void clickOnButton(String text) throws InterruptedException {
-        Selenide.$x(UNIVERSAL_XPATH_FOR_CLICKABLE_BUTTONS.replace("$1", text)).scrollTo().click();
+    public void clickOnButton() throws InterruptedException {
+        Selenide.$x("//a[.='Download']").scrollTo().click();
     Thread.sleep(3000);
     }
 

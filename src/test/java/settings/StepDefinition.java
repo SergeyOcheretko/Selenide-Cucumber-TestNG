@@ -64,9 +64,9 @@ public class StepDefinition {
     elementsTestPage.typeInTheTextArea(text);
     }
 
-    @Then("Click on {string} button")
-    public void clickOnButton(String text) throws InterruptedException {
-    elementsTestPage.clickOnButton(text);
+    @Then("Click on Download button")
+    public void clickOnButton() throws InterruptedException {
+    elementsTestPage.clickOnButton();
     }
 
     @And("Verify that results is displayed")
