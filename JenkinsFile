@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Execute tests') {
            steps {
-                       withMaven(maven : 'apache-maven-3.8.6') {
+                       (maven : 'apache-maven-3.8.6') {
                            bat 'mvn clean compile'
                        }
                    }
