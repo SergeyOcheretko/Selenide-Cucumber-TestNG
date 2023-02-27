@@ -9,7 +9,7 @@ pipeline {
         stage('Execute tests') {
             steps {
                 wrap([$class: 'Xvfb', screen: "${env.X_SCREEN}", autoDisplayName: true]) {
-                    bat "${env.M2_HOME}/bin/mvn ${env.MVN_GOAL}"
+                    bat"${env.M2_HOME}/bin/mvn ${env.MVN_GOAL}"
                 }
             }
         }
